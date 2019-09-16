@@ -1,10 +1,32 @@
-basePath: '{{.BasePath}}'
-host: '{{.Host}}'
+basePath: /api/v1
+host: fujingwen.com
 info:
-  contact: {}
-  description: '{{.Description}}'
-  license: {}
-  title: '{{.Title}}'
-  version: '{{.Version}}'
-paths: {}
+  contact:
+    email: hukx.michael@gmail.com
+    name: API Support
+  description: This is a server for mall app.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: api for mall app
+  version: "1.0"
+paths:
+  /api/v1/users/{id}:
+    get:
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "500": {}
+      summary: Get user detail
 swagger: "2.0"
